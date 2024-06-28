@@ -287,6 +287,7 @@ function convertToCrypto() {
 //       document.getElementById('input-checker').style.display = 'none';
 //   }
 // }
+
 function convertToXAi() {
   const cryptoValue = parseFloat(document.getElementById('cryptoValue').value);
   const conversionRate = parseFloat(document.getElementById('cryptoSelect').value);
@@ -306,64 +307,65 @@ function convertToXAi() {
 
   if (!isNaN(cryptoValue)) {
     if (cryptoValue <= thresholds[selectedCurrency].min) {
-      document.getElementById('xAiValue').value = 'Too low';
-      document.getElementById('input-checker').style.display = 'block';
-      document.getElementById('bonus-container').style.display = 'none';
-      document.getElementById('bonus-counter-container').style.display = 'none';
-      document.getElementById('min-deposit-value').textContent = `${thresholds[selectedCurrency].min} ${selectedCurrency}`;
-      swapButton.classList.add('disabled');
-      swapButton.href = "#"; // Prevent navigation
+        document.getElementById('xAiValue').value = 'Too low';
+        document.getElementById('input-checker').style.display = 'block';
+        document.getElementById('bonus-container').style.display = 'none';
+        document.getElementById('bonus-counter-container').style.display = 'none';
+        document.getElementById('min-deposit-value').textContent = `${thresholds[selectedCurrency].min} ${selectedCurrency}`;
+        swapButton.classList.add('disabled');
+        swapButton.removeAttribute('href'); // Prevent navigation
     } else {
-      let xAiValue = Math.round(cryptoValue * conversionRate); // Round to the nearest integer
-      document.getElementById('input-checker').style.display = 'none';
+        let xAiValue = Math.round(cryptoValue * conversionRate); // Round to the nearest integer
+        document.getElementById('input-checker').style.display = 'none';
 
-      const bonusContainer = document.getElementById('bonus-container');
-      const bonusMessage = document.getElementById('bonus-message');
-      const bonusCounterContainer = document.getElementById('bonus-counter-container');
-      const bonusCounter = document.getElementById('bonus-counter');
+        const bonusContainer = document.getElementById('bonus-container');
+        const bonusMessage = document.getElementById('bonus-message');
+        const bonusCounterContainer = document.getElementById('bonus-counter-container');
+        const bonusCounter = document.getElementById('bonus-counter');
 
-      let bonusText = '50% BONUS';
-      let missingText = '';
-      let showCounter = false;
+        let bonusText = '50% BONUS';
+        let missingText = '';
+        let showCounter = false;
 
-      if (cryptoValue >= thresholds[selectedCurrency].next200) {
-        xAiValue += xAiValue * 1; // Add 200% bonus
-        bonusText = '200% BONUS';
-        showCounter = false;
-      } else if (cryptoValue >= thresholds[selectedCurrency].next100) {
-        xAiValue += xAiValue; // Add 100% bonus
-        bonusText = '100% BONUS';
-        missingText = (thresholds[selectedCurrency].next200 - cryptoValue).toFixed(2) + ` more ${selectedCurrency} for 200% bonus`;
-        showCounter = true;
-      } else {
-        missingText = (thresholds[selectedCurrency].next100 - cryptoValue).toFixed(2) + ` more ${selectedCurrency} for 100% bonus`;
-        showCounter = true;
-      }
+        if (cryptoValue >= thresholds[selectedCurrency].next200) {
+            xAiValue += xAiValue * 1; // Add 200% bonus
+            bonusText = '200% BONUS';
+            showCounter = false;
+        } else if (cryptoValue >= thresholds[selectedCurrency].next100) {
+            xAiValue += xAiValue; // Add 100% bonus
+            bonusText = '100% BONUS';
+            missingText = `${(thresholds[selectedCurrency].next200 - cryptoValue).toFixed(2)} more ${selectedCurrency} for 200% bonus`;
+            showCounter = true;
+        } else {
+            missingText = `${(thresholds[selectedCurrency].next100 - cryptoValue).toFixed(2)} more ${selectedCurrency} for 100% bonus`;
+            showCounter = true;
+        }
 
-      document.getElementById('xAiValue').value = xAiValue; // Display as integer
+        document.getElementById('xAiValue').value = xAiValue; // Display as integer
 
-      bonusMessage.textContent = bonusText;
-      bonusContainer.style.display = 'block';
+        bonusMessage.textContent = bonusText;
+        bonusContainer.style.display = 'block';
 
-      if (showCounter) {
-        bonusCounter.textContent = missingText;
-        bonusCounterContainer.style.display = 'block';
-      } else {
-        bonusCounterContainer.style.display = 'none';
-      }
+        if (showCounter) {
+            bonusCounter.textContent = missingText;
+            bonusCounterContainer.style.display = 'block';
+        } else {
+            bonusCounterContainer.style.display = 'none';
+        }
 
-      swapButton.classList.remove('disabled');
-      swapButton.href = "/sawpid.html"; // Enable navigation
+        swapButton.classList.remove('disabled');
+        swapButton.href = "/sawpid.html"; // Enable navigation
     }
-  } else {
+} else {
     document.getElementById('xAiValue').value = '';
     document.getElementById('input-checker').style.display = 'none';
     document.getElementById('bonus-container').style.display = 'none';
     document.getElementById('bonus-counter-container').style.display = 'none';
     swapButton.classList.add('disabled');
-    swapButton.href = "#"; // Prevent navigation
-  }
+    swapButton.removeAttribute('href'); // Prevent navigation
 }
+}
+
 
 function convertToCrypto() {
   const xAiValue = parseInt(document.getElementById('xAiValue').value); // Parse as integer
@@ -425,9 +427,23 @@ function copyAddress() {
 }
 
 
+function checkInputFields() {
+  const cryptoValue = document.getElementById('cryptoValue').value.trim();
+  const xAiValue = document.getElementById('xAiValue').value.trim();
+  const swapButton = document.getElementById('swapButton');
 
+  if (cryptoValue === '' || xAiValue === '') {
+      swapButton.classList.add('disabled');
+      swapButton.removeAttribute('href'); // Prevent navigation
+  } else {
+      swapButton.classList.remove('disabled');
+      swapButton.href = "/sawpid.html"; // Enable navigation
+  }
+}
 
-
+document.getElementById('cryptoValue').addEventListener('input', checkInputFields);
+document.getElementById('xAiValue').addEventListener('input', checkInputFields);
+document.getElementById('cryptoSelect').addEventListener('change', checkInputFields);
 
 
 

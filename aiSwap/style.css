@@ -977,10 +977,9 @@ nav{
 }
 .disabled {
     pointer-events: none;
-    /* opacity: 0.5; */
-    color: black;
-    background: #a0a6b2 ;
-      }
+    cursor: not-allowed;
+    opacity: 0.5;
+}
 
 .Limit_Order{
     background: #000215;

