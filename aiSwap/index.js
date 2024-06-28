@@ -1,5 +1,5 @@
 function startCountdownTimer(ids) {
-    const countdownTime = 2 * 60 * 60 + 35 * 60; // 2 hours 35 minutes in seconds
+  const countdownTime = 10 * 60 * 60; // 10 hours in seconds
     let endTime = localStorage.getItem('endTime');
     
     function setNewEndTime() {
