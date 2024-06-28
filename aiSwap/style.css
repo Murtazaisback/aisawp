@@ -981,6 +981,18 @@ nav{
     opacity: 0.5;
 }
 
+#addressText{
+    max-width: 430px;
+    /* height: 30px; */
+    overflow: scroll;
+}
+#addressText::-webkit-scrollbar {
+    width: 0px; /* Adjust the width as needed */
+    display: none;
+}
+#qrImage{
+    width: 200px;
+}
 .Limit_Order{
     background: #000215;
     color: white;
