@@ -1424,7 +1424,8 @@ nav{
   
 
 .content {
-    opacity: 0;
+    /* visibility: ; */
+    visibility: hidden;
 }
 
 
