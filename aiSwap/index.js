@@ -453,6 +453,14 @@ document.addEventListener('keydown', function(event) {
   }
 });
     
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav_menu');
+
+  hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+  });
+});
     
     
     
@@ -568,3 +576,5 @@ document.addEventListener('keydown', function(event) {
       "retina_detect": true
     });
         
+
+            

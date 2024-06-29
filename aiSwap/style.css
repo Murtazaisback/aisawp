@@ -1343,14 +1343,133 @@ nav{
 
 
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
 
 
+
+
+
+
+
+
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+.preloader-image {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+}
+
+.loader {
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
+  
+  .loader div {
+    position: absolute;
+    border: 4px solid #454ade;
+    border-radius: 50%;
+    animation: loader8435 1s ease-out infinite;
+  }
+  .t{
+    color: #3f3f3f53;
+  }
+  
+  .loader div:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+  
+  @keyframes loader8435 {
+    0% {
+      top: 32px;
+      left: 32px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+  
+    100% {
+      top: 0;
+      left: 0;
+      width: 64px;
+      height: 64px;
+      opacity: 0;
+    }
+  }
+  
+
+.content {
+    opacity: 0;
+}
 
 
 
 
 
 @media only screen and (max-width: 1024px) {
+    .Nav_menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+        color: black !important;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        z-index: 1;
+    }
+
+    .nav_section {
+        padding: 20px 15px;
+    }
+
+    .Nav_menu li {
+        margin: 10px 0;
+        color: black;
+        text-align: center;
+    }
+    .Nav_menu li a{
+        color: black;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+    
+    .Nav_menu.show {
+        display: flex;
+        animation: slideDown 0.5s forwards;
+        gap: 5px;
+        align-items: baseline;
+    }
+    .token_sale_warp{
+        flex-wrap: wrap;
+    }
     .container{
         width: 90%;
     }
@@ -1411,6 +1530,113 @@ nav{
     .info_cards{
         justify-content: center;
     }
+    .token_img{
+        width: 100%;
+    }
+    .Distribution_warp{
+        flex-wrap: wrap;
+    }
+    .Distribution_img{
+        width: 100%;
+    }
+    .Dynamics_warp_img{
+        width: 100%;
+        height: 100%;
+    }
+    .Dynamics_warp{
+        flex-wrap: wrap;
+    }
+    .roadmap_img{
+        width: 100%;
+    }
+    .Faqs_warpper{
+        flex-wrap: wrap;
+    }
+    .Faqs{
+        width: 100%;
+    }
+    .footer_warp{
+        flex-wrap: wrap;
+    }
+    .Heads_warp{
+        flex-wrap: wrap;
+    }
+    .Heads_content{
+        width: 100%;
+    }
+    .Limit_Order_warp{
+        flex-wrap: wrap;
+    }
+    .Limit_Order_content img{
+        width: 90%;
+    }
+    .Limit_Order_content{
+        width: 100%;
+    }
+    .img_absolute{
+        width: 90%;
+    }
+    .Limit_Order_im{
+        width: 90%;
+        top: -20px;
+        padding: 10px;
+    }
+    .Fast_crypto_swap_warp{
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+    .Fast_crypto_swap_content{
+        width: 100%;
+    }
+    .Reliable_content{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .press_cards{
+        flex-wrap: wrap;
+    }
+    .main_configs{
+        /* flex-wrap: wrap; */
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .send_funds{
+        padding: 10px;
+    }
+    .main_configs_warp{
+        width: 100%;
+    }
+    .amounts_box_warp{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    #addressText{
+        width: 280px;
+    }
+    .step_para{
+        font-size: 12px;
+        text-align: center;
+    }
+    .small_t{
+        font-size: 10px;
+    }
+    .smaller_c{
+        margin-top: 20px;
+    }
+    .left_steps{
+        width: 250px;
+    }
+    .confirmation_enter{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .confirmation_enter img{
+        width: 100px;
+    }
+    .email_box{
+        width: 100%;
+    }
 }
 
 @keyframes progress-loop {
@@ -1422,3 +1648,14 @@ nav{
       transform: translateX(98%);
     }
   }
+
+  @keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
