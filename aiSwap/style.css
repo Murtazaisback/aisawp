@@ -1433,7 +1433,7 @@ nav{
 
 
 
-@media only screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .Nav_menu {
         display: none;
         flex-direction: column;
@@ -1478,9 +1478,11 @@ nav{
     .header_warp{
         flex-direction: column;
         align-items: normal;
+        gap: 10px;
     }
     .robots_img{
         width: 100%;
+        margin-top: 60px;
     }
     .timer{
         width: 100%;
@@ -1509,15 +1511,23 @@ nav{
         font-size: 30px;
     }
     .main_heading_t{
-        flex-direction: column;
+        /* flex-direction: column;
         text-align: left;
-        align-items: flex-start;
+        align-items: flex-start; */
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        font-size: 21px;
     }
+    
     .main_heading {
-        font-size: 59px;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
     }
     .main_heading_h{
-        font-size: 70px;
+        font-size: 24px;
     }
     .personal_Details_warp{
         padding: 20px;
@@ -1638,6 +1648,15 @@ nav{
     }
     .email_box{
         width: 100%;
+    }
+    .pre-sale_block_warp{
+        align-items: center;
+    }
+    .token_text{
+        font-size: 18px;
+    }
+    .payment-section{
+        text-align: center;
     }
 }
 
