@@ -736,24 +736,16 @@ particlesJS('particles-js',
     
       </script>
       <script>
-        window.addEventListener('load', () => {
+       window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     const content = document.querySelector('.content');
     
-    const minLoadingTime = 1000; // Minimum loading time in milliseconds (1 second)
-    const loadStartTime = Date.now();
-
-    const hidePreloader = () => {
-        const elapsedTime = Date.now() - loadStartTime;
-        if (elapsedTime >= minLoadingTime) {
-            preloader.style.display = 'none';
-            content.style.opacity = '1';
-        } else {
-            setTimeout(hidePreloader, minLoadingTime - elapsedTime);
-        }
-    };
-
-    hidePreloader();
+    const minLoadingTime = 1500; // Minimum loading time in milliseconds (2 seconds)
+    
+    setTimeout(() => {
+        preloader.style.display = 'none';
+        content.style.opacity = '1';
+    }, minLoadingTime);
 });
       </script>
 
